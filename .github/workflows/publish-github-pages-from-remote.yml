@@ -68,7 +68,7 @@ jobs:
       - name: Build the Docusaurus site
         env:
           DOCUSAURUS_BASEURL: '/doxygen2docusaurus/'
-        run: (cd website; npm run build)
+        run: (cd website; npm run convert-tsdoc-website && npm run build)
 
       - name: Setup Pages
         # https://github.com/actions/configure-pages
