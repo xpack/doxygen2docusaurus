@@ -1,2 +1,3 @@
 # doxygen2docusaurus
-Website for the new doxygen2docusaurus project
+
+Website for the doxygen2docusaurus-cli-ts project.

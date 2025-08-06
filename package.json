@@ -1,0 +1,43 @@
+{
+  "name": "doxygen2docusaurus.git",
+  "version": "1.0.0",
+  "description": "Website for the new doxygen2docusaurus project",
+  "scripts": {
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --xpack",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-link": "npm link",
+    "npm-outdated": "npm outdated",
+    "npm-update": "npm update",
+    "deep-clean": "del-cli node_modules package-lock.json",
+    "dumpconf": "env | sort | uniq",
+    "show-versions": "echo $(which node) $(node --version) && echo $(which npm) $(npm --version)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpack/doxygen2docusaurus.git"
+  },
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "https://github.com/ilg-ul"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xpack/doxygen2docusaurus/issues"
+  },
+  "homepage": "https://xpack.github.io/doxygen2docusaurus/",
+  "dependencies": {},
+  "devDependencies": {
+    "del-cli": "^6.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.19.1"
+  },
+  "topConfig": {
+    "descriptiveName": "doxygen2docusaurus website",
+    "isWebDeployOnly": "true"
+  },
+  "engines": {
+    "node": " >=20.0.0"
+  }
+}
