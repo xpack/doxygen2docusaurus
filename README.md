@@ -1,3 +1,3 @@
 # doxygen2docusaurus
 
-Website for the doxygen2docusaurus-cli-ts project.
+Website for the [doxygen2docusaurus-cli-ts](https://github.com/xpack/doxygen2docusaurus-cli-ts) project.
