@@ -33,9 +33,9 @@
   "dependencies": {},
   "devDependencies": {
     "@tsconfig/node20": "^20.1.9",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.19.1"
+    "liquidjs": "^10.25.7"
   },
   "topConfig": {
     "descriptiveName": "doxygen2docusaurus website",
