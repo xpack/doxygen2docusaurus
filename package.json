@@ -27,8 +27,12 @@
     "url": "https://github.com/xpack/doxygen2docusaurus/issues"
   },
   "homepage": "https://xpack.github.io/doxygen2docusaurus/",
+  "$dependenciesUrls": {
+    "@tsconfig/node20": "https://www.npmjs.com/package/@tsconfig/node20"
+  },
   "dependencies": {},
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.9",
     "del-cli": "^6.0.0",
     "json": "^11.0.0",
     "liquidjs": "^10.19.1"
@@ -38,6 +42,6 @@
     "isWebDeployOnly": "true"
   },
   "engines": {
-    "node": " >=20.0.0"
+    "node": ">=20.0.0"
   }
 }
