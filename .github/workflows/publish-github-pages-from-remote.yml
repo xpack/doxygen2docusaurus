@@ -65,7 +65,7 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        run: (cd website; npm ci)
+        run: (npm ci; cd website; npm ci)
 
       - name: Build the Docusaurus site
         env:
