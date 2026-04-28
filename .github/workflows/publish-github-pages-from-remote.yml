@@ -22,10 +22,12 @@ on:
     inputs:
       repository:
         description: The GitHub repository with the web content
-        required: true
+        required: false
+        default: 'xpack/doxygen2docusaurus-cli-ts'
       ref:
         description: The branch with the web content
-        required: true
+        required: false
+        default: 'master'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
