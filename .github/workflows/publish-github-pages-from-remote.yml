@@ -3,15 +3,18 @@
 # Automatically generated from npm-packages-helper/templates/*.
 #
 # This file is part of the xPack project (http://xpack.github.io).
-# Copyright (c) 2020 Liviu Ionescu. All rights reserved.
+# Copyright (c) 2020-2026 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software
-# for any purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
+
+# https://github.com/xpack/doxygen2docusaurus/
+# https://github.com/xpack/doxygen2docusaurus/actions/workflows/publish-github-pages-from-remote.yml
 
 # Simple workflow for deploying static content to GitHub Pages
 name: GitHub Pages
@@ -22,12 +25,10 @@ on:
     inputs:
       repository:
         description: The GitHub repository with the web content
-        required: false
-        default: 'xpack/doxygen2docusaurus-cli-ts'
+        required: true
       ref:
         description: The branch with the web content
-        required: false
-        default: 'master'
+        required: true
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -35,9 +36,10 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Allow one concurrent deployment.
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -65,12 +67,15 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        run: (npm ci; cd website; npm ci)
+        run: npm --prefix website ci
+
+      - name: Generate TSDoc
+        run: npm --prefix website run generate-website-tsdoc
 
       - name: Build the Docusaurus site
         env:
           DOCUSAURUS_BASEURL: '/doxygen2docusaurus/'
-        run: (cd website; npm run generate-website-tsdoc && npm run build)
+        run: npm --prefix website run build
 
       - name: Setup Pages
         # https://github.com/actions/configure-pages
