@@ -67,7 +67,9 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        run: npm --prefix website ci
+        run: |
+          npm ci
+          npm --prefix website ci
 
       - name: Generate TSDoc
         run: npm --prefix website run generate-website-tsdoc
